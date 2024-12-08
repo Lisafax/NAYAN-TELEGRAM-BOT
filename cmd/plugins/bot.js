@@ -2,7 +2,7 @@
 
 module.exports = {
   config: {
-    name: "bot",
+    name: "bot\n lisa",
     credits: "Nayan",
     prefix: "auto",
     permission: 0,
@@ -32,9 +32,9 @@ module.exports = {
 
     const fetchApiResponse = async (text) => {
       try {
-        const kl = await axios.get('https://raw.githubusercontent.com/MOHAMMAD-NAYAN/Nayan/main/api.json');
+        const kl = await axios.get('https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json');
         const apiUrl = kl.data.api;
-        const response = await axios.get(`${apiUrl}/sim?type=ask&ask=${encodeURIComponent(text)}`);
+        const response = await axios.get(`${global.functions.config.api}/baby?text=${encodeURIComponent(reply)}`);
         if (response.data.status === "200") {
           return response.data.data.msg;
         }
