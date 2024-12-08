@@ -9,7 +9,7 @@ module.exports = {
     tags: ["Utility"],
   },
   start: async ({ event, api, pluginsLoad }) => {
-    const commandsPerPage = 10;
+    const commandsPerPage = 60;
     const chatId = event.msg.chat.id;
 
     
@@ -46,7 +46,7 @@ module.exports = {
     }
 
     
-    const currentPage = input ? parseInt(input, 10) : 1;
+    const currentPage = input ? parseInt(input, 60) : 1;
 
     
     if (currentPage < 1 || currentPage > totalPages) {
@@ -64,7 +64,7 @@ module.exports = {
       response += `${start + index + 1}. ${cmd.name}\n`;
     });
 
-    response += `\n⚙️ Total Commands: ${totalCommands}\n👤 Author: Nayan`;
+    response += `\n⚙️ Total Commands: ${totalCommands}\n👤 Author: N1SA9`;
 
     
     await api.sendMessage(chatId, response, { parse_mode: "Markdown" });
